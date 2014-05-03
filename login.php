@@ -7,6 +7,7 @@
 		$pwd = $_POST['pwd'];
 		$fuck = false;
 		
+		if (ctype_alnum($_POST['pwd'])){
 		$result = mysql_query("SELECT * FROM user WHERE uname='$id' and upwd='$pwd' limit 1");
 		if ($row = mysql_fetch_array($result)){
 
@@ -23,6 +24,9 @@
 		else{
 			$fuck = true;
 		}
+		}
+		else 
+			$fuck = true;
 	
 	}
 ?>
