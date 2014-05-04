@@ -14,7 +14,7 @@
 		if ($row = mysql_fetch_array($result)){
 			$sql="INSERT INTO code (pid, uid, ctext, clang) VALUES ('$pid', '$uid', '$ctext', '$clang')";
 			mysql_query($sql, $con);
-			echo 'submit successful...<br/><a href="status.php"> go to status page</a>';
+			header("Location:status.php");
 		}
 		else
 			echo 'sorry, this problem does not exist.<br/> <a href="index.php">go to index page</a>';
